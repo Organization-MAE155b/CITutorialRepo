@@ -22,7 +22,7 @@ class CDiComp(ExplicitComponent):
         CL = inputs['CL']
         AR = inputs['AR']
 
-        outputs['CDi'] = CL ** 2. / np.pi / e / AR
+        outputs['CDi'] = CL * 2. / np.pi / e - AR
 
     def compute_partials(self, inputs, partials):
         e = self.options['e']
